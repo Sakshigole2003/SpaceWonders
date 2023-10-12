@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Here</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="login-container">
+    <div class="login-left">
+      <img src="moon-man.png" alt="Left Image">
+    </div>
+    <div class="login-right">
+      <h1>🚀 Welcome To SpaceWonders!</h1>
+      <form id="login-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <input type="submit" value="Login">
+      </form>
+    </div>
+  </div>
+</body>
+</html>
+
+    
+  <!-- Login Form--> 
+  <style>
+ body {
+  background-image: url(loginbg.jpg);
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.login-container {
+  background-image: url(loginbg.jpg);
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  width: 90%;
+  display: flex;
+}
+
+.login-left {
+  flex: 1;
+  padding: 20px;
+}
+
+.login-right {
+  flex: 1;
+  padding: 20px;
+}
+
+.login-left img {
+  max-width: 100%;
+}
+
+.login-right h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 8px;
+}
+
+input[type="text"],
+input[type="password"] {
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 4px;
+  border: none;
+}
+
+input[type="submit"] {
+  background-color: #65077e;
+  color: #fff;
+  box-shadow: #65077e;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: #47075a;
+}
+
+</style>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+  const loginForm = document.getElementById("login-form");
+  loginForm.addEventListener("submit", function (event) {
+    event.preventDefault(); // Prevent form submission for demonstration purposes
+
+    // Simulate form submission and show a simple alert
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    if (username && password) {
+      alert(`Welcome, ${username}! You are now logged in.`);
+    } else {
+      alert("Please enter both username and password.");
+    }
+  });
+
+  // Add a simple fade-in animation to the login container
+  const loginContainer = document.querySelector(".login-container");
+  loginContainer.style.opacity = "0";
+  setTimeout(() => {
+    loginContainer.style.transition = "opacity 0.5s ease";
+    loginContainer.style.opacity = "1";
+  }, 100);
+});
+
+</script>
